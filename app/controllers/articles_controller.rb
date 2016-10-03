@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @articles = Article.find_by(category_id: params[:category_id])
+    @category = Category.find_by(id: params[:category_id])
+    @article = Article.where(id: params[:ids])
   end
 end
