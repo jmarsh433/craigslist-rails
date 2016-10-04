@@ -28,13 +28,18 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    # binding.pry
     if @article.update(article_params)
-      # binding.pry
       redirect_to category_article_path(@article)
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to category_articles_url
   end
 
 private

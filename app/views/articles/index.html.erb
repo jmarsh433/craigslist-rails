@@ -4,6 +4,7 @@
   <% @category.articles.each do |article| %>
     <li><%= link_to article.title, category_article_path(@category, article) %></li>
     <%= link_to 'Edit', edit_category_article_path(@category, article) %>
+    <%= link_to 'Delete', category_article_url(@category, article), method: :delete %>
   <% end %>
 </ul>
 
