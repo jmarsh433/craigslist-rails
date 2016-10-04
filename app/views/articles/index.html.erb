@@ -3,5 +3,8 @@
 <ul>
   <% @category.articles.each do |article| %>
     <li><%= link_to article.title, category_article_path(@category, article) %></li>
+    <%= link_to 'Edit', edit_category_article_path(@category, article) %>
   <% end %>
 </ul>
+
+<%= link_to "create new article", new_category_article_path(@category)%>
